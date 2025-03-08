@@ -26,13 +26,16 @@ public class User implements UserDetails {
     private Long id;
     @Column(unique = true, nullable = false)
     private String username;
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String password;
     private LocalDate registrationDate;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Token> tokens;
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
