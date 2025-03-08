@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
@@ -23,6 +25,7 @@ public class Review {
     @Min(1)
     @Max(5)
     private short rating;
+    @CreationTimestamp
     private LocalDateTime reviewDate;
 
     @ManyToOne
