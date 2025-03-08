@@ -1,4 +1,4 @@
-package ru.serega.musicreviews.services;
+package ru.serega.musicreviews.services.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,6 +17,7 @@ import ru.serega.musicreviews.entities.Token;
 import ru.serega.musicreviews.entities.User;
 import ru.serega.musicreviews.repos.TokenRepo;
 import ru.serega.musicreviews.repos.UserRepo;
+import ru.serega.musicreviews.services.jwt.JwtService;
 import ru.serega.musicreviews.util.Role;
 
 import java.time.LocalDate;

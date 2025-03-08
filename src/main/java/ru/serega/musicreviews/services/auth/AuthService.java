@@ -1,4 +1,4 @@
-package ru.serega.musicreviews.services;
+package ru.serega.musicreviews.services.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

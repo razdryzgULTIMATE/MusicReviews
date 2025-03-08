@@ -1,4 +1,4 @@
-package ru.serega.musicreviews.services;
+package ru.serega.musicreviews.services.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;

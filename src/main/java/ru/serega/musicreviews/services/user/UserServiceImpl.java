@@ -1,4 +1,4 @@
-package ru.serega.musicreviews.services;
+package ru.serega.musicreviews.services.user;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

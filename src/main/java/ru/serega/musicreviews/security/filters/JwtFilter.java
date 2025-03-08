@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import ru.serega.musicreviews.services.JwtService;
-import ru.serega.musicreviews.services.UserService;
+import ru.serega.musicreviews.services.jwt.JwtService;
+import ru.serega.musicreviews.services.user.UserService;
 
 import java.io.IOException;
 

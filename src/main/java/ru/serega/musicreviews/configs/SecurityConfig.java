@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import ru.serega.musicreviews.security.filters.JwtFilter;
 import ru.serega.musicreviews.security.handlers.CustomAccessDeniedHandler;
 import ru.serega.musicreviews.security.handlers.CustomLogOutHandler;
-import ru.serega.musicreviews.services.UserService;
+import ru.serega.musicreviews.services.user.UserService;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 

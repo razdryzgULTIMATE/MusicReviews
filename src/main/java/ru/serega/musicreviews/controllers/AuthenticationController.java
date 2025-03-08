@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.serega.musicreviews.dtos.AuthenticationResponseDTO;
 import ru.serega.musicreviews.dtos.LoginRequestDTO;
 import ru.serega.musicreviews.dtos.RegistrationDTO;
-import ru.serega.musicreviews.services.AuthService;
-import ru.serega.musicreviews.services.UserService;
+import ru.serega.musicreviews.services.auth.AuthService;
+import ru.serega.musicreviews.services.user.UserService;
 
 @RestController
 @RequiredArgsConstructor
