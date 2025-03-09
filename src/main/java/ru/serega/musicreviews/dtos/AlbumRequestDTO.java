@@ -13,6 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 //+ Создание альбомов
 public class AlbumRequestDTO {
+    private Long albumId;
     private String title;
     private Set<Long> artistIds;
     private LocalDate releaseDate;

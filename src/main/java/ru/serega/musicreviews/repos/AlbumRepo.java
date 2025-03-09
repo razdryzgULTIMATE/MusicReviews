@@ -4,9 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import ru.serega.musicreviews.entities.Album;
+import ru.serega.musicreviews.entities.Artist;
+import ru.serega.musicreviews.entities.Genre;
 import ru.serega.musicreviews.entities.Tag;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public interface AlbumRepo extends JpaRepository<Album, Long> {
@@ -14,5 +17,9 @@ public interface AlbumRepo extends JpaRepository<Album, Long> {
     @Query("SELECT a FROM Album a JOIN a.tags t WHERE t.name = :tagName")
     List<Album> findAlbumsByTagName(@Param("tagName") String tagName);
 
+    @Query("SELECT a FROM Album a JOIN a.artists art where art = :artists and a.title = :title")
+    Optional<Album> findByArtists(@Param("artists") Set<Artist> artists, @Param("title") String title);
 
+    Optional<Album> findByTitleAndArtists(String title, Set<Artist> artists);
+    List<Album> findByGenre(Genre genre);
 }

@@ -12,6 +12,5 @@ public interface TagService {
     TagDTO getTag(Long id);
     TagDTO getTagByName(String tagName);
     Set<TagDTO> getAllTags();
-    Set<TagDTO> getTagsByAlbum(AlbumRequestDTO album);
     void deleteTag(Long id);
 }
