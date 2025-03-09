@@ -14,6 +14,4 @@ public interface TagRepo extends JpaRepository<Tag, Long> {
     Optional<Tag> findByName(String name);
     Set<Tag> findByNameIn(Set<String> names);
     boolean existsByName(String name);
-    //@Query("SELECT t FROM Tag t JOIN ")
-    Set<Tag> findByAlbum(Album album);
 }
