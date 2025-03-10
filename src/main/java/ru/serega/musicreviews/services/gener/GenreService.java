@@ -9,7 +9,6 @@ public interface GenreService {
     GenreDTO getGenre(Long id);
     GenreDTO createGenre(GenreDTO genre);
     GenreDTO updateGenre(Long id, GenreDTO genre);
-    GenreDTO getGenreByName(String genreName);
     void deleteGenre(Long id);
 
 }

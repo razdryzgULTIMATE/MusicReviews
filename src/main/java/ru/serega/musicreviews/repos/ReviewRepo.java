@@ -3,7 +3,6 @@ package ru.serega.musicreviews.repos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.serega.musicreviews.entities.Genre;
 import ru.serega.musicreviews.entities.Review;
 import ru.serega.musicreviews.entities.User;
 

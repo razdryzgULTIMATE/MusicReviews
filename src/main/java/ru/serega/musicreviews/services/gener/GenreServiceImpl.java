@@ -54,12 +54,6 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
-    public GenreDTO getGenreByName(String genreName) {
-        Optional<Genre> genre = genreRepo.findByNameIgnoreCase(genreName);
-        return genre.map(value -> new GenreDTO(value.getName())).orElse(null);
-    }
-
-    @Override
     public void deleteGenre(Long id) {
         genreRepo.deleteById(id);
     }

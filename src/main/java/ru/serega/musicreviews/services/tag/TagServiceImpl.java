@@ -44,12 +44,6 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
-    public TagDTO getTagByName(String tagName) {
-        Optional<Tag> tagOptional = tagRepo.findByName(tagName);
-        return tagOptional.map(t -> new TagDTO(t.getName())).orElse(null);
-    }
-
-    @Override
     public Set<TagDTO> getAllTags() {
         Set<Tag> tags = new HashSet<>(tagRepo.findAll());
         return convertToTagDTOSet(tags);
