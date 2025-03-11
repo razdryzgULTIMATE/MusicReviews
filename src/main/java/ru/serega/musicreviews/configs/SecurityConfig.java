@@ -47,7 +47,8 @@ public class SecurityConfig {
                                     "/")
                             .permitAll();
                     auth.requestMatchers("/admin/**").hasAuthority("ADMIN");
-                    auth.anyRequest().authenticated();
+                    auth.requestMatchers("/user/**").authenticated();
+                    auth.anyRequest().permitAll();
                 })
                 .userDetailsService(userService)
                 .exceptionHandling(e -> {

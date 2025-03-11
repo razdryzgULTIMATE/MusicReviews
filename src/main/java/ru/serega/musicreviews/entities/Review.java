@@ -19,6 +19,7 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 2000)
     private String text;
 
     @Column(nullable = false, columnDefinition = "SMALLINT CHECK (rating BETWEEN 1 AND 5)")

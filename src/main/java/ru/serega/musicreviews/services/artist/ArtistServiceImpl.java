@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ArtistServiceImpl implements ArtistService {
     private final ArtistRepo artistRepo;
+
     @Override
     public ArtistDTO createArtist(ArtistDTO artist) {
         Artist newArtist = new Artist();

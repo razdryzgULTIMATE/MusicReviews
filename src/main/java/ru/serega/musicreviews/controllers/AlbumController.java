@@ -34,14 +34,17 @@ public class AlbumController {
     public ResponseEntity<AlbumResponseDTO> getAlbum(@PathVariable Long albumId) {
         return ResponseEntity.ofNullable(albumService.getAlbum(albumId));
     }
+
     @GetMapping("/album/by-genre")
     public ResponseEntity<?> getAlbumByGenre(@RequestParam String genre) {
         return ResponseEntity.ok(albumService.getAlbumsByGenre(genre));
     }
+
     @GetMapping("/album/by-title-and-artists")
     public ResponseEntity<?> getAlbumByTitleAndArtists(@RequestBody AlbumRequestDTO albumRequestDTO) {
         return ResponseEntity.ofNullable(albumService.getAlbumByTitleAndArtists(albumRequestDTO));
     }
+
     @DeleteMapping("/admin/album/{albumId}")
     public ResponseEntity<?> deleteAlbum(@PathVariable Long albumId) {
         albumService.deleteAlbum(albumId);

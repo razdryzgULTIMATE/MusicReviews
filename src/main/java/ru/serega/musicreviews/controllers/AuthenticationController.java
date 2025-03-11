@@ -23,20 +23,22 @@ public class AuthenticationController {
 
     @PostMapping("/registration")
     public ResponseEntity<?> register(@RequestBody RegistrationDTO registration) {
-        try{
+        try {
             authenticationService.register(registration);
-        }catch (DataIntegrityViolationException ex) {
+        } catch (DataIntegrityViolationException ex) {
             if (ex.getCause() instanceof ConstraintViolationException) {
                 return ResponseEntity.badRequest().body("Имя пользователя уже занято");
             }
         }
         return ResponseEntity.ok("Регистрация прошла успешно");
     }
+
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponseDTO> authenticate(
             @RequestBody LoginRequestDTO request) {
         return ResponseEntity.ok(authenticationService.authenticate(request));
     }
+
     @PostMapping("/refresh_token")
     public ResponseEntity<AuthenticationResponseDTO> refreshToken(
             HttpServletRequest request,
