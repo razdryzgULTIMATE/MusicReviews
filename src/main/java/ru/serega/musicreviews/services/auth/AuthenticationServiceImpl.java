@@ -74,7 +74,7 @@ public class AuthenticationServiceImpl implements AuthService {
         User user = userRepo
                 .findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("No user found"));
-        if (!jwtService.isValidRefresh(token, user)){
+        if (!jwtService.isValidRefresh(token, user)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         String accessToken = jwtService.generateAccessToken(user);

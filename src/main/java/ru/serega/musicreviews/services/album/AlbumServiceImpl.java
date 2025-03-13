@@ -51,7 +51,8 @@ public class AlbumServiceImpl implements AlbumService {
             Album entity = find.get();
 
             Genre genre = genreRepo.findById(album.getGenreId()).orElseThrow(
-                    () -> new EntityNotFoundException("Genre not found with id: " + album.getGenreId()));
+                    () -> new EntityNotFoundException("Genre not found with id: " + album.getGenreId())
+            );
             Set<Tag> tags = tagRepo.findByNameIn(album.getTags());
             Set<Artist> artists = new HashSet<>(artistRepo.findAllById(album.getArtistIds()));
             entity.setGenre(genre);

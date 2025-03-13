@@ -39,7 +39,6 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable);
         http.cors(AbstractHttpConfigurer::disable);
         http.authorizeHttpRequests(auth -> {
-                    //+ ДОПИСАТЬ
                     auth.requestMatchers("/login/**",
                                     "/registration/**",
                                     "/css/**",
@@ -47,7 +46,7 @@ public class SecurityConfig {
                                     "/")
                             .permitAll();
                     auth.requestMatchers("/admin/**").hasAuthority("ADMIN");
-                    auth.requestMatchers("/user/**").authenticated();
+                    auth.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN");
                     auth.anyRequest().permitAll();
                 })
                 .userDetailsService(userService)
